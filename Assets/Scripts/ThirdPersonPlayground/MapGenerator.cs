@@ -123,16 +123,18 @@ public class MapGenerator : MonoBehaviour
             for (int x = 0; x < size; x++)
             {
                 Cell cell = grid[x, y];
+                float xCord = -size * .5f + x;
+                float yCord = -size * .5f + y;
                 if (!cell._isWater)
                 {
-                    Vector3 a = new Vector3(x - .5f, 0, y + .5f);
-                    Vector3 b = new Vector3(x + .5f, 0, y + .5f);
-                    Vector3 c = new Vector3(x - .5f, 0, y - .5f);
-                    Vector3 d = new Vector3(x + .5f, 0, y - .5f);
-                    Vector2 uvA = new Vector2(x / (float)size, y / (float)size);
-                    Vector2 uvB = new Vector2((x + 1) / (float)size, y / (float)size);
-                    Vector2 uvC = new Vector2(x / (float)size, (y + 1) / (float)size);
-                    Vector2 uvD = new Vector2((x + 1) / (float)size, (y + 1) / (float)size);
+                    Vector3 a = new Vector3(xCord - .5f, 0, yCord + .5f);
+                    Vector3 b = new Vector3(xCord + .5f, 0, yCord + .5f);
+                    Vector3 c = new Vector3(xCord - .5f, 0, yCord - .5f);
+                    Vector3 d = new Vector3(xCord + .5f, 0, yCord - .5f);
+                    Vector2 uvA = new Vector2(xCord / (float)size, yCord / (float)size);
+                    Vector2 uvB = new Vector2((xCord + 1) / (float)size, yCord / (float)size);
+                    Vector2 uvC = new Vector2(xCord / (float)size, (yCord + 1) / (float)size);
+                    Vector2 uvD = new Vector2((xCord + 1) / (float)size, (yCord + 1) / (float)size);
                     Vector3[] v = new Vector3[] { a, b, c, b, d, c };
                     Vector2[] uv = new Vector2[] { uvA, uvB, uvC, uvB, uvD, uvC };
                     for (int k = 0; k < 6; k++)
@@ -166,6 +168,8 @@ public class MapGenerator : MonoBehaviour
             for (int x = 0; x < size; x++)
             {
                 Cell cell = grid[x, y];
+                float xCord = -size * .5f + x;
+                float yCord = -size * .5f + y;
                 if (!cell._isWater)
                 {
                     if (x > 0)
@@ -173,10 +177,10 @@ public class MapGenerator : MonoBehaviour
                         Cell left = grid[x - 1, y];
                         if (left._isWater)
                         {
-                            Vector3 a = new Vector3(x - .5f, 0, y + .5f);
-                            Vector3 b = new Vector3(x - .5f, 0, y - .5f);
-                            Vector3 c = new Vector3(x - .5f, -1, y + .5f);
-                            Vector3 d = new Vector3(x - .5f, -1, y - .5f);
+                            Vector3 a = new Vector3(xCord - .5f, 0, yCord + .5f);
+                            Vector3 b = new Vector3(xCord - .5f, 0, yCord - .5f);
+                            Vector3 c = new Vector3(xCord - .5f, -1, yCord + .5f);
+                            Vector3 d = new Vector3(xCord - .5f, -1, yCord - .5f);
                             Vector3[] v = new Vector3[] { a, b, c, b, d, c };
                             for (int k = 0; k < 6; k++)
                             {
@@ -190,10 +194,10 @@ public class MapGenerator : MonoBehaviour
                         Cell right = grid[x + 1, y];
                         if (right._isWater)
                         {
-                            Vector3 a = new Vector3(x + .5f, 0, y + .5f);
-                            Vector3 b = new Vector3(x + .5f, 0, y - .5f);
-                            Vector3 c = new Vector3(x + .5f, -1, y + .5f);
-                            Vector3 d = new Vector3(x + .5f, -1, y - .5f);
+                            Vector3 a = new Vector3(xCord + .5f, 0, yCord + .5f);
+                            Vector3 b = new Vector3(xCord + .5f, 0, yCord - .5f);
+                            Vector3 c = new Vector3(xCord + .5f, -1, yCord + .5f);
+                            Vector3 d = new Vector3(xCord + .5f, -1, yCord - .5f);
                             Vector3[] v = new Vector3[] { a, b, c, b, d, c };
                             for (int k = 0; k < 6; k++)
                             {
@@ -207,10 +211,10 @@ public class MapGenerator : MonoBehaviour
                         Cell down = grid[x, y - 1];
                         if (down._isWater)
                         {
-                            Vector3 a = new Vector3(x - .5f, 0, y - .5f);
-                            Vector3 b = new Vector3(x + .5f, 0, y - .5f);
-                            Vector3 c = new Vector3(x - .5f, -1, y - .5f);
-                            Vector3 d = new Vector3(x + .5f, -1, y - .5f);
+                            Vector3 a = new Vector3(xCord - .5f, 0, yCord - .5f);
+                            Vector3 b = new Vector3(xCord + .5f, 0, yCord - .5f);
+                            Vector3 c = new Vector3(xCord - .5f, -1, yCord - .5f);
+                            Vector3 d = new Vector3(xCord + .5f, -1, yCord - .5f);
                             Vector3[] v = new Vector3[] { a, b, c, b, d, c };
                             for (int k = 0; k < 6; k++)
                             {
@@ -224,10 +228,10 @@ public class MapGenerator : MonoBehaviour
                         Cell up = grid[x, y + 1];
                         if (up._isWater)
                         {
-                            Vector3 a = new Vector3(x - .5f, 0, y + .5f);
-                            Vector3 b = new Vector3(x + .5f, 0, y + .5f);
-                            Vector3 c = new Vector3(x - .5f, -1, y + .5f);
-                            Vector3 d = new Vector3(x + .5f, -1, y + .5f);
+                            Vector3 a = new Vector3(xCord - .5f, 0, yCord + .5f);
+                            Vector3 b = new Vector3(xCord + .5f, 0, yCord + .5f);
+                            Vector3 c = new Vector3(xCord - .5f, -1, yCord + .5f);
+                            Vector3 d = new Vector3(xCord + .5f, -1, yCord + .5f);
                             Vector3[] v = new Vector3[] { a, b, c, b, d, c };
                             for (int k = 0; k < 6; k++)
                             {
@@ -257,22 +261,22 @@ public class MapGenerator : MonoBehaviour
     void DrawTexture(Cell[,] grid)
     {
         Texture2D texture = new Texture2D(size, size);
-        Color[] colorMap = new Color[size * size];
         for (int y = 0; y < size; y++)
         {
             for (int x = 0; x < size; x++)
             {
                 Cell cell = grid[x, y];
+                int xCord = (int)(-size * .5f + x);
+                int yCord = (int)(-size * .5f + y);
                 if (cell._isWater)
                 {
-                    colorMap[y * size + x] = Color.blue;
+                    texture.SetPixel(xCord, yCord, Color.blue);
                 } else
                 {
-                    colorMap[y * size + x] = Color.green;
+                    texture.SetPixel(xCord, yCord, Color.green);
                 }
             }
             texture.filterMode = FilterMode.Point;
-            texture.SetPixels(colorMap);
             texture.Apply();
 
             MeshRenderer meshRenderer = gameObject.GetComponent<MeshRenderer>();
@@ -299,6 +303,8 @@ public class MapGenerator : MonoBehaviour
             for (int x = 0; x < size; x++)
             {
                 Cell cell = grid[x, y];
+                float xCord = -size * .5f + x;
+                float yCord = -size * .5f + y;
                 if (!cell._isWater)
                 {
                     float v = Random.Range(0f, treeDensity);
@@ -306,7 +312,7 @@ public class MapGenerator : MonoBehaviour
                     {
                         GameObject prefab = treePrefabs[0];
                         GameObject tree = Instantiate(prefab, transform);
-                        tree.transform.position = new Vector3(x, 0, y);
+                        tree.transform.position = new Vector3(xCord, 0, yCord);
                         tree.transform.rotation = Quaternion.Euler(0, Random.Range(0, 360f), 0);
                         tree.transform.localScale = Vector3.one * Random.Range(.8f, 1.2f);
                     }
