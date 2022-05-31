@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     #region Movement attributes
     [SerializeField] Vector3 direction;
     [SerializeField] float speed;
+    [SerializeField] float rotationSpeed;
     #endregion
 
     #region Animation
@@ -25,5 +26,6 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         transform.Translate(direction * speed * Time.deltaTime);
+        transform.Rotate(Vector3.up * direction.x * rotationSpeed * Time.deltaTime);
     }
 }
