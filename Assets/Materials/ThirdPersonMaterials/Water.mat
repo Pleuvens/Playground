@@ -7,23 +7,19 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mine_bot@forward 1-01 - Default
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Name: Water
+  m_Shader: {fileID: -6465566751694194690, guid: c857c57da0359be47857d44dbe034eff,
+    type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _BaseMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -60,10 +56,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SpecGlossMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -77,37 +69,35 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _AlphaClip: 0
-    - _Blend: 0
+    - Vector1_63d6b7635e7a406281747a7f89426119: 4.34
+    - Vector1_b21683387aff45bfa450c01e7b63d622: 0.19
+    - Vector1_b21683387aff45bfa450c01e7b63d622_1: 0.6
+    - Vector1_b21683387aff45bfa450c01e7b63d622_2: 1.12
+    - Vector1_b21683387aff45bfa450c01e7b63d622_3: 1.21
+    - Vector1_b2b44c94ea92408084910ba2dd3db7c1: 2.74
+    - Vector1_eace1962d34d44b798b2d46da4bcf6d7: 0.4
     - _BumpScale: 1
-    - _ClearCoatMask: 0
-    - _ClearCoatSmoothness: 0
-    - _Cull: 2
     - _Cutoff: 0.5
-    - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _EnvironmentReflections: 1
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _QueueOffset: 0
-    - _ReceiveShadows: 1
-    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Surface: 0
     - _UVSec: 0
-    - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
-    - _Color: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
-    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - Color_747f58490638479d8a2e32afde5afbc2: {r: 0.3290762, g: 0.6893491, b: 0.8018868,
+        a: 1}
+    - Color_a6776a2f4b9145d09dd0c76a78748b07: {r: 1, g: 1, b: 1, a: 1}
+    - Color_cda9c8a02c1d4ea8a9cedd7684e88ace: {r: 0.27367386, g: 0.7332677, b: 0.7735849,
+        a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
