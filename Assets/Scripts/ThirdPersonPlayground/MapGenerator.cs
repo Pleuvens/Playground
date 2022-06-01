@@ -198,7 +198,7 @@ public class MapGenerator : MonoBehaviour
                             Vector3 b = new Vector3(xCord + .5f, 0, yCord - .5f);
                             Vector3 c = new Vector3(xCord + .5f, -1, yCord + .5f);
                             Vector3 d = new Vector3(xCord + .5f, -1, yCord - .5f);
-                            Vector3[] v = new Vector3[] { a, b, c, b, d, c };
+                            Vector3[] v = new Vector3[] { c, b, a, c, d, b };
                             for (int k = 0; k < 6; k++)
                             {
                                 vertices.Add(v[k]);
@@ -232,7 +232,7 @@ public class MapGenerator : MonoBehaviour
                             Vector3 b = new Vector3(xCord + .5f, 0, yCord + .5f);
                             Vector3 c = new Vector3(xCord - .5f, -1, yCord + .5f);
                             Vector3 d = new Vector3(xCord + .5f, -1, yCord + .5f);
-                            Vector3[] v = new Vector3[] { a, b, c, b, d, c };
+                            Vector3[] v = new Vector3[] { c, b, a, c, d, b };
                             for (int k = 0; k < 6; k++)
                             {
                                 vertices.Add(v[k]);
@@ -243,8 +243,8 @@ public class MapGenerator : MonoBehaviour
                 }
             }
         }
-        mesh.vertices = vertices.ToArray();
-        mesh.triangles = triangles.ToArray();
+        mesh.SetVertices(vertices);
+        mesh.SetTriangles(triangles, 0);
         mesh.RecalculateNormals();
 
         GameObject edgeObj = new GameObject("Edge");
