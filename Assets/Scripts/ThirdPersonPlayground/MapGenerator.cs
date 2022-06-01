@@ -273,7 +273,7 @@ public class MapGenerator : MonoBehaviour
                     texture.SetPixel(xCord, yCord, Color.blue);
                 } else
                 {
-                    texture.SetPixel(xCord, yCord, Color.green);
+                    texture.SetPixel(xCord, yCord, new Color(153 / 255f, 191 / 255f, 115 / 255f));
                 }
             }
             texture.filterMode = FilterMode.Point;
