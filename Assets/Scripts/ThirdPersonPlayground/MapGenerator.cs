@@ -6,6 +6,7 @@ using Pathfinding;
 public class MapGenerator : MonoBehaviour
 {
     [SerializeField] int size = 100;
+    [SerializeField] int mapScale = 10;
     [SerializeField] float scale = .1f;
     [SerializeField] float waterLevel = .4f;
     [SerializeField] Material terrainMaterial;
@@ -59,6 +60,8 @@ public class MapGenerator : MonoBehaviour
         DrawEdgeMesh(grid);
         DrawTexture(grid);
         GenerateTrees(grid);
+
+        transform.localScale = new Vector3(mapScale, mapScale, mapScale);
     }
 
     void GenerateRivers(Cell[,] grid)
@@ -312,7 +315,7 @@ public class MapGenerator : MonoBehaviour
                     {
                         GameObject prefab = treePrefabs[0];
                         GameObject tree = Instantiate(prefab, transform);
-                        tree.transform.position = new Vector3(xCord, 0, yCord);
+                        tree.transform.position = new Vector3(xCord, -0.1f, yCord);
                         tree.transform.rotation = Quaternion.Euler(0, Random.Range(0, 360f), 0);
                         tree.transform.localScale = Vector3.one * Random.Range(.8f, 1.2f);
                     }

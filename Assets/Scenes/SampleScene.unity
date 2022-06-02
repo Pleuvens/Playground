@@ -720,6 +720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 100
+  mapScale: 5
   scale: 0.1
   waterLevel: 0.4
   terrainMaterial: {fileID: 2100000, guid: 666950115effc284a9433bb54f8435f2, type: 2}
