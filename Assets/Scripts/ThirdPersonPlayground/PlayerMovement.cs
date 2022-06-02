@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 inputMovement = value.ReadValue<Vector2>();
         direction = new Vector3(inputMovement.x, 0, inputMovement.y);
-        animator.SetBool("run", !direction.Equals(Vector3.zero));
+        animator.SetBool("run", inputMovement.y != 0);
     }
 
     private void Update()
