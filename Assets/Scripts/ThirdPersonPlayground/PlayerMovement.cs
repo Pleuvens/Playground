@@ -9,12 +9,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Vector3 direction;
     [SerializeField] float speed;
     [SerializeField] float rotationSpeed;
+    [SerializeField] bool isMovementFreezed = false;
     #endregion
 
     #region Animation
     [SerializeField] Animator animator;
     #endregion
-
 
     public void OnMovement(InputAction.CallbackContext value)
     {
@@ -23,9 +23,22 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("run", inputMovement.y != 0);
     }
 
+    public void FreezeMovement()
+    {
+        isMovementFreezed = true;
+    }
+
+    public void UnfreezeMovement()
+    {
+        isMovementFreezed = false;
+    }
+
     private void Update()
     {
-        transform.Translate(direction * speed * Time.deltaTime);
-        transform.Rotate(Vector3.up * direction.x * rotationSpeed * Time.deltaTime);
+        if (!isMovementFreezed)
+        {
+            transform.Translate(direction * speed * Time.deltaTime);
+            transform.Rotate(Vector3.up * direction.x * rotationSpeed * Time.deltaTime);
+        }
     }
 }
