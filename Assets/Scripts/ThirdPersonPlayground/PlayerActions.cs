@@ -11,18 +11,23 @@ public class PlayerActions : MonoBehaviour
 
     [SerializeField] PlayerMovement playerMovement;
 
+    private const string blockingStartFnName = "DisableMovement";
+    private const string blockingEndFnName = "EnableMovement";
+
     private void Start()
     {
-        AddAnimationEvent(3, true, "OnBlockingAnimationStart", 0);
-        AddAnimationEvent(3, false, "OnBlockingAnimationEnd", 0);
+        AddAnimationEvent(PlayerClip.Attack, true, blockingStartFnName, 0);
+        AddAnimationEvent(PlayerClip.Attack, false, blockingEndFnName, 0);
+        AddAnimationEvent(PlayerClip.Pickup, true, blockingStartFnName, 0);
+        AddAnimationEvent(PlayerClip.Pickup, false, blockingEndFnName, 0);
     }
 
-    void OnBlockingAnimationStart()
+    void DisableMovement()
     {
         playerMovement.FreezeMovement();
     }
 
-    void OnBlockingAnimationEnd()
+    void EnableMovement()
     {
         playerMovement.UnfreezeMovement();
     }
@@ -33,6 +38,19 @@ public class PlayerActions : MonoBehaviour
         {
             animator.SetBool("attack_1", true);
         }
+    }
+
+    public void OnPickup(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            animator.SetBool("tr_pickup", true);
+        }
+    }
+
+    public void InteractWithItem()
+    {
+        Debug.Log("Picked up");
     }
 
     void AddAnimationEvent(int clip, bool start, string functionName, float floatParam)

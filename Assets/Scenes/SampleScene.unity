@@ -884,6 +884,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1545542525 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1228989505265653612, guid: 356c109d274840142b7b947714d771ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 1228114705256241200}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 932f3c3a83bae1c4496ffc47431d9d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2035843280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,6 +1317,56 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228989505265653611, guid: 356c109d274840142b7b947714d771ce,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228989505265653611, guid: 356c109d274840142b7b947714d771ce,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: a1d5060d-0955-4745-9cb7-0cb5137bb25e
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228989505265653611, guid: 356c109d274840142b7b947714d771ce,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: PlayerControls/Pickup[/Keyboard/f]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228989505265653611, guid: 356c109d274840142b7b947714d771ce,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228989505265653611, guid: 356c109d274840142b7b947714d771ce,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228989505265653611, guid: 356c109d274840142b7b947714d771ce,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1545542525}
+    - target: {fileID: 1228989505265653611, guid: 356c109d274840142b7b947714d771ce,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228989505265653611, guid: 356c109d274840142b7b947714d771ce,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228989505265653611, guid: 356c109d274840142b7b947714d771ce,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerActions, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228989505265653611, guid: 356c109d274840142b7b947714d771ce,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1228989505265653612, guid: 356c109d274840142b7b947714d771ce,
         type: 3}
