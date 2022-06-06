@@ -15,11 +15,6 @@ public class WaterGenerator : MonoBehaviour
         filter.mesh = GenerateMesh();
     }
 
-    void Update()
-    {
-        
-    }
-
     Mesh GenerateMesh()
     {
         Mesh m = new Mesh();

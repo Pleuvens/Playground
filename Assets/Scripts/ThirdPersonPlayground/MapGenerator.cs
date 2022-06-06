@@ -149,21 +149,23 @@ public class MapGenerator : MonoBehaviour
                 }
             }
         }
-        mesh.vertices = vertices.ToArray();
-        mesh.triangles = triangles.ToArray();
-        mesh.uv = uvs.ToArray();
+        mesh.SetVertices(vertices);
+        mesh.SetTriangles(triangles, 0);
+        mesh.SetUVs(0, uvs);
         mesh.RecalculateNormals();
+
+        gameObject.AddComponent<MeshRenderer>();
 
         MeshFilter meshFilter = gameObject.AddComponent<MeshFilter>();
         meshFilter.mesh = mesh;
 
-        gameObject.AddComponent<MeshRenderer>();
-        gameObject.AddComponent<MeshCollider>();
+        MeshCollider meshCollider = gameObject.AddComponent<MeshCollider>();
+        meshCollider.sharedMesh = mesh;
     }
 
     void DrawEdgeMesh(Cell[,] grid)
     {
-        Mesh mesh = new Mesh();
+        Mesh m = new Mesh();
         List<Vector3> vertices = new List<Vector3>();
         List<int> triangles = new List<int>();
         for (int y = 0; y < size; y++)
@@ -246,19 +248,20 @@ public class MapGenerator : MonoBehaviour
                 }
             }
         }
-        mesh.SetVertices(vertices);
-        mesh.SetTriangles(triangles, 0);
-        mesh.RecalculateNormals();
+        m.SetVertices(vertices);
+        m.SetTriangles(triangles, 0);
+        m.RecalculateNormals();
 
         GameObject edgeObj = new GameObject("Edge");
         edgeObj.transform.SetParent(transform);
 
         MeshFilter meshFilter = edgeObj.AddComponent<MeshFilter>();
-        meshFilter.mesh = mesh;
+        meshFilter.mesh = m;
 
         MeshRenderer meshRenderer = edgeObj.AddComponent<MeshRenderer>();
         meshRenderer.material = edgeMaterial;
-        edgeObj.AddComponent<MeshCollider>();
+        MeshCollider meshCollider = edgeObj.AddComponent<MeshCollider>();
+        meshCollider.sharedMesh = m;
     }
 
     void DrawTexture(Cell[,] grid)
